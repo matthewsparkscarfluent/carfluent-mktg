@@ -1,7 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500&family=Lexend+Zetta&family=Space+Mono&display=swap');
+
+// box-sizing for flexbox
+
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+// colors
+
+$color-1: #000;
+$color-2: #fff;
+$color-3: #c0f5f9;
+$color-4: #e576c6;
+$color-5: #dce8ef;
+
+// fonts
+
+$archivo: 'Archivo Narrow', sans-serif;
+$lexend: 'Lexend Zetta', sans-serif;
+$space: 'Space Mono', monospace;
+
+// dat grid
+
+@mixin grid {
+	display: grid;
+	grid-template-columns: repeat(24, 1fr);
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+	@content;
 }

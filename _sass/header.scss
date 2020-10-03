@@ -1,0 +1,23 @@
+.header {
+    position: sticky;
+    background: $color-2;
+    padding: 40px 20px;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        flex: 0 0 30%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 250px;
+        }
+    }
+}

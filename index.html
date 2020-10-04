@@ -2,15 +2,44 @@
 layout: default
 page_class:
 - class: home
----
+hero:
+- 
+    tagline: "Coming Soon"
+    headline: "beautifully bilingual vehicle listings, built with AI"
+    btn-link: "#"
+    btn-label: Join Waitlist
+    img-src: "img/hero-img-anim.svg"
+    img-alt: "Carfluent is AI that helps auto dealers translate their web presence."
 
+---
+{% for hero in page.hero%}
 <div class="hero">
     <div class="hero__headline">
-        <h3>Coming Soon</h3>
-        <h2>a beautiufuly bilingual web presence for your dealership’s vehicles,built with AI</h2>
-        <a href="#" class="btn">Join Waitlist</a>
+        <h3>{{ hero.tagline }}</h3>
+        <h1>{{ hero.headline }}</h1>
+        <a href="{{ hero.btn-link }}" class="btn">{{ hero.btn-label }}</a>
     </div>
     <div class="hero__right">
-        <img src="img/hero-img-anim.svg" alt="Carfluent is AI that helps auto dealers translate their web presence.">
+        <img src="{{ hero.img-src }}" alt="{{ hero.img-alt }}">
+    </div>
+</div>
+{% endfor %}
+
+<div class="features">
+    <div class="features__wrapper">
+        <div class="features__item  features__item--left">
+            <div class="features__item-wrapper">
+                <img src="img/drone-walk-anim.svg" alt="Carfluent's AI makes translation a snap!">
+                <h2><span>get by with a little help from your machines</span></h2>
+                <p>We use artifical intellegence for fluid translations. That translates to less work, and a broader audience. Then of course, that translates to more sales.</p>
+            </div>
+        </div>
+        <div class="features__item  features__item--right">
+            <div class="features__item-wrapper">
+                <img src="img/woman-car.svg" alt="Attract more customers with listings in their native language.">
+                <h2><span>big power with a little native lengua</span></h2>
+                <p>Attract more customers, using the language that they’re acustom to, and rely on some beautifuly crafted UX to do the rest.</p>
+            </div>
+        </div>
     </div>
 </div>

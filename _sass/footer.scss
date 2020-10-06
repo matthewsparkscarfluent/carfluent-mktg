@@ -8,6 +8,9 @@ footer {
     font-family: $plex;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: .9rem;
     text-align: center;
+
+    p {
+        font-size: 13px;
+    }
 }

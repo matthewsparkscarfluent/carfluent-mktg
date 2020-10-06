@@ -49,10 +49,7 @@ highlight:
 </div>
 {% endfor %}
 
-<form action="success.html" name="Test" method="POST" netlify>
-    <input type="text" name="test-input">
-    <input name="submit-form" type="submit" value="Join Waitlist" />
-</form>
+{% include modal-form.html %}
 
 <div class="features">
     <div class="features__wrapper">

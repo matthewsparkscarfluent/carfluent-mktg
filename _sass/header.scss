@@ -6,8 +6,11 @@
     &__container {
         display: flex;
         align-items: center;
-        max-width: 1200px;
         margin: 0 auto;
+
+        @include desktop-sm-min {
+            padding: 0 40px;
+        }
     }
 
     &__logo {

@@ -183,12 +183,12 @@
             
             img {
                 width: 100%;
-                max-width: 400px;
+                max-width: 600px;
                 display: block;
                 margin: 0 auto;
 
                 @include tablet-wide-min {
-                    max-width: 80%;
+                    max-width: 100%;
                 }
             }
         }

@@ -1,0 +1,181 @@
+#modal-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms;
+  display: none;
+  
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+    display: block;
+  }
+
+}
+      
+  #modal-inner {
+    position: absolute;
+    display: block;
+    padding: 20px 20px 40px;
+    line-height: 1.8;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0px 12px 24px rgba(0,0,0,0.2);
+    background: $color-2;
+    color: $color-1;
+
+    @include tablet-min {
+        width: 70%; 
+        padding: 10%;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    code {
+      font-weight: bold;
+    }
+
+  }
+
+  a.close {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color-1;
+    opacity: 0.8;
+    transition: opacity 200ms;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  // Form Styles
+
+form {
+  max-width: 450px;
+  margin: 0 auto;
+
+  > .input-group {
+    position: relative;
+    background: $color-2;
+    border-top: 2px solid $color-5;
+    border-left: 2px solid $color-5;
+    border-right: 2px solid $color-5;
+    border-bottom: 2px solid $color-5;
+    margin: 15px 0;
+    border-radius: 5px;
+  
+
+    > label {
+      opacity: 0.3;
+      position: absolute;
+      top: 19px;
+      left: 50px;
+      transition: opacity 100ms;
+      font-family: $plex;
+    }
+
+    > input[type="text"], > input[type="email"], > input[type="password"], textarea {
+      width: 100%;
+      border: 0;
+      padding: 20px 20px 20px 50px;
+      background: $color-2;
+      color: $color-1;
+      font-size: 1rem;
+      font-weight: 300;
+      transition: background 200ms;
+
+      &:focus {
+        outline: 0;
+
+        & + label {
+          opacity: 0;
+        }
+      }
+
+      &:valid {
+        @include input-icon('/img/form-check.svg');
+
+        & + label {
+          opacity: 0;
+        }
+      }
+
+      &:invalid:not(:focus):not(:placeholder-shown) {
+        @include input-icon('/img/form-error.svg');
+
+        & + label {
+          opacity: 0;
+        }
+      }
+
+      &.email:not(:valid) {
+        @include input-icon('/img/form-email.svg');
+      }
+
+      &.username:not(:valid) {
+        @include input-icon('/img/form-user.svg');
+      }
+
+      &.write:not(:valid) {
+        @include input-icon('/img/form-comments.svg');
+      }
+
+      &.business:not(:valid) {
+        @include input-icon('/img/form-dealership.svg');
+      }
+
+      &:invalid:focus:not(:placeholder-shown) ~ .requirements {
+        transition-delay: 1s;
+        max-height: 200px;
+        padding: 0 30px 20px 50px;
+      }
+    }
+}
+
+    input, textarea {
+        font-family: $plex;
+    }
+}
+
+    .requirements {
+      padding: 0 30px 0 50px;
+      max-height: 0;
+      transition: 0.28s;
+      overflow: hidden;
+      color: red;
+      font-family: $plex;
+    }
+ 
+  input[type="submit"] {
+    display: block;
+    background: $color-4;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-family: $lexend;
+    text-align: center;
+    color: $color-2;
+    font-size: .8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background .3s;
+    border: none;
+    margin-top: 40px;
+
+    &:hover, &:active {
+        background: darken($color-4, 10%);
+    }
+  }
+    

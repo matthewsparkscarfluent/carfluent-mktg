@@ -6,10 +6,34 @@ hero:
 - 
     tagline: "Coming Soon"
     headline: "beautifully bilingual vehicle listings, built with AI"
-    btn-link: "#"
+    btn-link: "#modal-content"
     btn-label: Join Waitlist
     img-src: "img/hero-img-anim.svg"
     img-alt: "Carfluent is AI that helps auto dealers translate their web presence."
+
+features:
+-
+    class: "features__item--left"
+    img-src: "img/drone-walk-anim.svg"
+    img-alt: "Carfluent's AI makes translation a snap!"
+    headline: "get by with a little help from your machines"
+    text: "We use artifical intellegence for fluid translations. That translates to less work, and a broader audience. Then of course, that translates to more sales."
+
+-
+    class: "features__item--right"
+    img-src: "img/woman-car-anim.svg"
+    img-alt: "Attract more customers with listings in their native language."
+    headline: "big power with a little native lengua"
+    text: "Attract more customers, using the language that they’re acustom to, and rely on some beautifuly crafted UX to do the rest."
+
+highlight:
+-
+    img-src: "img/car-list-anim.svg"
+    img-alt: "Carfluent offers multilingual listings"
+    tagline: "Spanish VDP / SRP"
+    headline: "publish spanish inventory listings in less time than it took to read this sentence"
+    btn-link: "#modal-content"
+    btn-label: "Join Waitlist"
 
 ---
 {% for hero in page.hero%}
@@ -25,36 +49,35 @@ hero:
 </div>
 {% endfor %}
 
+{% include modal-form.html %}
+
 <div class="features">
     <div class="features__wrapper">
-        <div class="features__item  features__item--left">
+        {% for feature in page.features %}
+        <div class="features__item  {{ feature.class }}">
             <div class="features__item-wrapper">
-                <img src="img/drone-walk-anim.svg" alt="Carfluent's AI makes translation a snap!">
-                <h2><span>get by with a little help from your machines</span></h2>
-                <p>We use artifical intellegence for fluid translations. That translates to less work, and a broader audience. Then of course, that translates to more sales.</p>
+                <img src="{{ feature.img-src }}" alt="{{ feature.img-alt }}">
+                <h2><span>{{ feature.headline }}</span></h2>
+                <p>{{ feature.text }}</p>
             </div>
         </div>
-        <div class="features__item  features__item--right">
-            <div class="features__item-wrapper">
-                <img src="img/woman-car-anim.svg" alt="Attract more customers with listings in their native language.">
-                <h2><span>big power with a little native lengua</span></h2>
-                <p>Attract more customers, using the language that they’re acustom to, and rely on some beautifuly crafted UX to do the rest.</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
+{% for highlight in page.highlight %}
 <div class="highlight">
     <div class="highlight__left">
         <div class="highlight__left-image">
-            <img src="img/car-list-anim.svg" alt="Carfluent offers multilingual listings">
+            <img src="{{ highlight.img-src }}" alt="{{ highlight.img-alt }}">
         </div>
     </div>
     <div class="highlight__right">
         <div class="highlight__right-wrapper">
-            <h3>Spanish VDP / SRP</h3>
-            <h2>publish spanish inventory listings in less time than it took to read this sentence</h2>
-            <a href="#" class="btn">Join Waitlist</a>
+            <h3>{{ highlight.tagline }}</h3>
+            <h2>{{ highlight.headline }}</h2>
+            <a href="{{ highlight.btn-link }}" class="btn">{{ highlight.btn-label }}</a>
         </div>
     </div>
 </div>
+{% endfor %}

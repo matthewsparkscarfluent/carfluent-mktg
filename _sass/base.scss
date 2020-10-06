@@ -36,6 +36,11 @@ $space: 'Space Mono', monospace;
 	@content;
 }
 
+@mixin input-icon($icon-uri) {
+	background: url($icon-uri) no-repeat left 10px center !important;
+	background-size: 24px !important;
+}
+
 // media queries
 
 $phone-min:         421px;

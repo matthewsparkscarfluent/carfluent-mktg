@@ -1,0 +1,13 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@import "base";
+
+.success-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}

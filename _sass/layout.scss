@@ -5,8 +5,19 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+    min-height: 90vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $space;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
 p {
     color: $color-1;
+    font-family: $plex, sans-serif;
 }
 
 .btn {

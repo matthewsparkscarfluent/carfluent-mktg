@@ -12,6 +12,7 @@
     {% assign pagecontent_description = page.description | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
 
     <meta name="description" content="{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}"/>
 
      <!-- Facebook integration -->
     <meta property="og:title" content="{{ page.title }}"/>

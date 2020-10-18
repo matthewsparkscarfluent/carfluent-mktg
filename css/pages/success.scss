@@ -5,29 +5,75 @@
 @import "base";
 
 .success {
-    background: linear-gradient(90deg, rgba(192,245,240,1) 0%, rgba(192,245,240,1) 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-
+    
     &__wrapper {
-        background: $color-2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 60px 40px;
-        border-radius: 10px;
+        @include grid;
+        grid-gap: 0;
+        min-height: 100vh;
 
-        h2 {
-            font-size: 2rem;
-            margin: 0;
+        &--text {
+            grid-column: auto / span 24;
+            background: $color-1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 120px 40px;
+            order: 2;
+
+            @include tablet-wide-min {
+                grid-column: auto / span 14;
+                order: 1;
+                padding: 120px;
+            }
+
+            h1 {
+                margin-bottom: 40px;
+        
+                @include tablet-wide-min {
+                    max-width: 400px;
+                }
+        
+                @include desktop-min {
+                    max-width: 450px;
+                }
+            }
         }
 
-        p {
-            margin: 40px 0;
+        &--image {
+            grid-column: auto / span 24;
+            background: $color-3;
+            position: relative;
+            order: 1;
+            min-height: 400px;
+
+            @include phone-wide-min {
+                min-height: 500px;
+            }
+
+            @include tablet-wide-min {
+                grid-column: auto / span 10;
+                order: 2;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 500px;
+                position: absolute;
+                top: auto;
+                bottom: -80px;
+                left: 50%;
+                transform: translate(-50%, 0);
+
+                @include tablet-wide-min {
+                    max-width: 800px;
+                    top: 50%;
+                    left: -30%;
+                    bottom: unset;
+                    transform: translate(0, -50%);
+                }
+            }
         }
     }
 

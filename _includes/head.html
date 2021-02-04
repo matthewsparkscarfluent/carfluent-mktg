@@ -41,5 +41,17 @@
             <link rel="stylesheet" href="{{ '/css/pages/' | append: class.class | append: '.css' | prepend: site.baseurl }}">
         {% endif %}
     {% endfor %}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ELXQ6HKEP"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        
+
+        gtag('config', 'G-8ELXQ6HKEP');
+        </script>
     
 </head>

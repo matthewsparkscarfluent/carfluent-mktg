@@ -8,8 +8,6 @@ hero:
 - 
     tagline: "Coming Soon"
     headline: "beautifully bilingual vehicle listings, built with AI"
-    btn-link: "#modal-content"
-    btn-label: Join Waitlist
     img-src: "img/hero-img-anim.svg"
     img-alt: "Carfluent is AI that helps auto dealers translate their web presence."
 
@@ -34,8 +32,6 @@ highlight:
     img-alt: "Carfluent offers multilingual listings"
     tagline: "Instantly Bilingual"
     headline: "publish spanish inventory listings in less time than it took to read this sentence"
-    btn-link: "#modal-content"
-    btn-label: "Join Waitlist"
 
 ---
 {% for hero in page.hero %}
@@ -43,7 +39,7 @@ highlight:
     <div class="hero__headline">
         <h3>{{ hero.tagline }}</h3>
         <h1>{{ hero.headline }}</h1>
-        <a href="{{ hero.btn-link }}" class="btn">{{ hero.btn-label }}</a>
+        <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Join waitlist </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
     </div>
     <div class="hero__right">
         <img src="{{ hero.img-src }}" alt="{{ hero.img-alt }}">
@@ -51,7 +47,7 @@ highlight:
 </div>
 {% endfor %}
 
-{% include modal-form.html %}
+<!-- {% include modal-form.html %} -->
 
 <div class="features">
     <div class="features__wrapper">
@@ -78,7 +74,7 @@ highlight:
         <div class="highlight__right-wrapper">
             <h3>{{ highlight.tagline }}</h3>
             <h2>{{ highlight.headline }}</h2>
-            <a href="{{ highlight.btn-link }}" class="btn">{{ highlight.btn-label }}</a>
+            <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Join waitlist </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
         </div>
     </div>
 </div>

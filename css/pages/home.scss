@@ -18,7 +18,7 @@
     &__container {
         @include grid;
         width: 100%;
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
@@ -80,7 +80,7 @@
             }
 
             @include desktop-min {
-                left: -45%;
+                left: -25%;
                 min-width: 600px;
             }
         }
@@ -189,7 +189,8 @@
         flex-wrap: wrap;
         padding: 20px;
         border-radius: 20px;
-        border: solid 2px transparentize($color-6, .8);
+        border: solid 1px $color-6;
+        background: $color-7;
 
         @include tablet-min {
           padding: 40px;
@@ -226,11 +227,12 @@
     padding-top: calc(9/16 * 100%);
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-size: contain !important;
+    background-size: cover !important;
     background-attachment: scroll !important;
 
     @include tablet-min {
         background-attachment: fixed !important;
+        background-size: contain !important;
     }
     
 
@@ -241,10 +243,11 @@
 }
 
 .features {
+    padding: 80px 20px;
 
     &__section-headline {
         grid-column: auto / span 24;
-        padding: 40px 0;
+        padding: 0 0 40px;
         text-align: center;
         width: 100%;
         margin: 0 auto;
@@ -262,9 +265,11 @@
         max-width: 1300px;
         margin: 0 auto;
         padding: 40px;
+        grid-gap: 10px;
 
         @include tablet-min {
             padding: 100px 0 180px; 
+            grid-gap: clamp(10px, 1rem, 40px);
         }
     }
 
@@ -274,6 +279,7 @@
         flex-direction: column;
         justify-content: flex-start;
         border: solid 1px $color-6;
+        background: $color-7;
         border-radius: 12px;
         margin: 0 0 140px;
 
@@ -317,7 +323,7 @@
     &__item-wrapper {
         max-width: 350px;
         margin: 0 auto;
-        padding: 0 40px 40px;
+        padding: 40px;
 
         @include tablet-min {
             max-width: 390px;
@@ -350,7 +356,7 @@
     padding: 80px 20px;
     background: #ECF3FA;
     position: relative;
-    height: 120vh;
+    height: 100vh;
     overflow: hidden;
 
     &::after {
@@ -375,11 +381,12 @@
 
     &__container {
         width: 100%;
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
         @include grid;
         position: relative;
         z-index: 1;
+        padding: 80px;
     }
 
     &__text {
@@ -407,7 +414,7 @@
         right: -20vh;
         z-index: 1;
 
-        @include tablet-min {
+        @include desktop-min {
             width: 90vh;
             height: 90vh;
         }
@@ -419,13 +426,13 @@
             top: 50%;
             left: -300px;
             padding: 20px 60px;
-            background: white;
+            background: $color-7;
             border-radius: 20px;
             border: solid 1px $color-6;
             font-family: $space;
             font-style: italic;
             font-size: 1rem;
-            box-shadow: var(--shadow-elevation-medium);
+            // box-shadow: var(--shadow-elevation-medium);
             display: none;
 
             @include tablet-wide-min {
@@ -498,6 +505,7 @@
                 display: block;
                 margin: 0 auto;
                 height: 100%;
+                max-height: 600px;
             }
         }
     }
@@ -563,11 +571,16 @@
 .training {
     padding: 80px 20px;
 
+    @include tablet-min {
+      padding: 180px 20px;
+    }
+    
+
     &__container {
         width: 100%;
-        max-width: 1400px;
-        @include grid;
+        max-width: 1200px;
         margin: 0 auto;
+        @include grid;
     }
 
     &__text {

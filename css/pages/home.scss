@@ -4,16 +4,34 @@
 
 @import "base";
 
+.homepage__headline {
+    font-size: clamp(2rem, 2.75vw, 2.75rem);
+}
+
 .hero {
-    @include grid;
     grid-gap: 0;
     width: 100%;
     overflow: hidden;
+    background: url('/img/city.svg') center top/cover no-repeat;
+    position: relative;
+
+    &__container {
+        @include grid;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
 
     &__headline {
         grid-column: auto / span 24;
-        order: 2;
-        background: $color-1;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        
         padding: 80px 40px;
 
         @include tablet-wide-min {
@@ -29,8 +47,7 @@
 
     &__right {
         grid-column: auto / span 24;
-        order: 1;
-        background: $color-3;
+        order: 2;
         position: relative;
         min-height: 60vw;
         display: flex;
@@ -59,18 +76,18 @@
                 left: -50%;
                 width: 100%;
                 height: auto;
-                min-width: 800px;
+                min-width: 500px;
             }
 
             @include desktop-min {
                 left: -45%;
-                min-width: 900px;
+                min-width: 600px;
             }
         }
     }
 
     h3 {
-        color: $color-2;
+        color: $color-1;
         text-transform: uppercase;
         font-size: .8rem;
         font-family: $lexend;
@@ -78,34 +95,176 @@
     }
 
     h1 {
-        color: $color-2;
-        font-family: $space;
-        letter-spacing: 1px;
-        font-size: 1.75rem;
-        width: 100%;
-        margin-bottom: 40px;
-
         @include tablet-wide-min {
-            max-width: 400px;
+            max-width: 500px;
+            margin: 0 0 20px;
         }
 
         @include desktop-min {
-            max-width: 450px;
+            max-width: 550px;
         }
+    }
+
+    p {
+        margin: 0 0 60px;
     }
 }
 
+.waves__container {
+    inset: auto 0 0;
+    position: absolute;
+    width: 100%;
+}
+
+.waves {
+    position:relative;
+    width: 100%;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    max-height:150px;
+    height:15vh;
+    min-height:100px;
+  }
+
+/* Animation */
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+  }
+
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+
+/* Makes */
+
+.makes {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+
+    @include tablet-min {
+        padding: 60px 20px;
+    }
+    
+
+    .tag {
+        margin: 60px 20px;
+
+        @include tablet-min {
+          margin: 60px;
+        }
+        
+    }
+    
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 2px transparentize($color-6, .8);
+
+        @include tablet-min {
+          padding: 40px;
+        }
+        
+    }
+}
+
+.make {
+    flex: 0 0 auto;
+    min-width: 10%;
+    padding: 20px;
+
+    &:last-of-type {
+        min-width: 15%;
+
+        img {
+            min-width: 150px;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 50px;
+        min-width: 80px;
+    }
+}
+
+/* Parallax */
+
+.parallax {
+    height: 0;
+    padding-top: calc(9/16 * 100%);
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-attachment: scroll !important;
+
+    @include tablet-min {
+        background-attachment: fixed !important;
+    }
+    
+
+    @include tablet-wide-min {
+        background-size: cover !important;
+    }
+    
+}
+
 .features {
+
+    &__section-headline {
+        grid-column: auto / span 24;
+        padding: 40px 0;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 900px;
+
+        @include tablet-min {
+            margin: 0 auto 100px;
+        }
+        
+    }
 
     &__wrapper {
         @include grid;
         width: 100%;
         max-width: 1300px;
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 40px;
 
         @include tablet-min {
-            padding: 140px 0; 
+            padding: 100px 0 180px; 
         }
     }
 
@@ -113,24 +272,32 @@
         grid-column: auto / span 24;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        border: solid 1px $color-6;
+        border-radius: 12px;
+        margin: 0 0 140px;
 
         @include tablet-min {
-            grid-column: auto / span 12;
+            grid-column: auto / span 8;
+            margin: 0;
+        }
+
+        h3 {
+            color: $color-1;
+            text-align: center;
+            margin: 0;
         }
 
         h2 {
             font-family: $space;
-            background-color: $color-2;
             line-height: 2;
-
-            span {
-                background-color: $color-3;
-            }
+            color: $color-1;
+            text-align: center;
         }
 
         p {
             font-family: $plex;
+            text-align: center;
         }
 
         img {
@@ -138,33 +305,177 @@
             height: auto;
         }
 
-        &--left {
-            border-bottom: 5px solid $color-5;
+    }
 
-            @include tablet-min {
-                border-right: 5px solid $color-5;
-                border-bottom: none;
-            }
-        }
+    &__subheadline {
+        background: $color-3;
+        padding: 20px 10px;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
     }
 
     &__item-wrapper {
         max-width: 350px;
         margin: 0 auto;
-        padding: 80px 0;
+        padding: 0 40px 40px;
 
         @include tablet-min {
             max-width: 390px;
-            padding: 0;
         }
 
         p {
             font-size: 15px;
             line-height: 1.7;
         }
+
+        h2 span{
+            line-height: 1.3;
+        }
+
+        img {
+            margin: 0 0 -80px;
+        }
     }
 
+    &__image {
+        margin: auto 0 -80px;
+        padding: 0 40px;
+      }
+
 }
+
+/* Admin */
+
+.admin {
+    padding: 80px 20px;
+    background: #ECF3FA;
+    position: relative;
+    height: 120vh;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('/img/galaxy.svg') right top/contain no-repeat;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background: url("/img/wave.svg") center bottom/cover no-repeat;
+        height: 50%;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        z-index: 1;
+      }
+
+
+    &__container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        @include grid;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__text {
+        grid-column: auto / span 24;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        @include tablet-min {
+          grid-column: auto / span 10;
+        }
+
+        img {
+            padding: 60px 0 120px;
+        }
+        
+    }
+
+    &__image {
+        width: 70vh;
+        height: 70vh;
+        position: absolute;
+        bottom: -20vh;
+        right: -20vh;
+        z-index: 1;
+
+        @include tablet-min {
+            width: 90vh;
+            height: 90vh;
+        }
+        
+
+        &::before {
+            content: 'Admin tool coming soon';
+            position: absolute;
+            top: 50%;
+            left: -300px;
+            padding: 20px 60px;
+            background: white;
+            border-radius: 20px;
+            border: solid 1px $color-6;
+            font-family: $space;
+            font-style: italic;
+            font-size: 1rem;
+            box-shadow: var(--shadow-elevation-medium);
+            display: none;
+
+            @include tablet-wide-min {
+              display: block;
+            }
+            
+        }
+
+    }
+
+    &__image-item {
+        position: absolute;
+        inset: 0;
+        
+        @include tablet-min {
+            clip-path: circle(50% at 50% 50%);
+        }
+        
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url('/img/perspective.jpg') center center/cover no-repeat;
+            animation: slidein 40s infinite;
+        }
+    }
+
+    @keyframes slidein {
+        0% {
+            top: 0;
+            left: 0;
+        }
+      
+        50% {
+            top: 0;
+            left: -100%;
+        }
+
+        100% {
+            top: 0;
+            left: 0;
+        }
+
+      }
+}
+
 
 .highlight {
     @include grid;
@@ -175,7 +486,7 @@
         background: $color-3;
 
         @include tablet-wide-min {
-            grid-column: auto / span 10;
+            grid-column: auto / span 9;
         }
 
         &-image {
@@ -187,10 +498,6 @@
                 display: block;
                 margin: 0 auto;
                 height: 100%;
-
-                @include tablet-wide-min {
-                    max-width: 100%;
-                }
             }
         }
     }
@@ -201,28 +508,44 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 80px 40px;
+        padding: 180px 40px;
+        position: relative;
 
         @include tablet-wide-min {
-            grid-column: auto / span 14;
-            padding: 160px 80px;
+            grid-column: auto / span 15;
+            padding: 160px 80px 160px 160px;
         }
 
-        h3 {
+        &::after {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: url('/img/wyl.svg') center center/contain no-repeat;
+            transform: translateX(-50%);
+
+            @include tablet-wide-min {
+                top: 50%;
+                left: -100px;
+                transform: translateY(-50%);
+            }
+            
+        }
+
+        p {
             color: $color-2;
-            text-transform: uppercase;
-            font-size: .8rem;
-            font-family: $lexend;
-            margin-top: 0;
+            margin-bottom: 40px;
         }
     
         h2 {
-            color: $color-2;
+            color: $color-3;
             font-family: $space;
             letter-spacing: 1px;
             font-size: 1.75rem;
             width: 100%;
-            margin-bottom: 40px;
+            margin: 0;
     
             @include tablet-wide-min {
                 max-width: 400px;
@@ -232,5 +555,61 @@
                 max-width: 500px;
             }
         }
+    }
+}
+
+/* Training */
+
+.training {
+    padding: 80px 20px;
+
+    &__container {
+        width: 100%;
+        max-width: 1400px;
+        @include grid;
+        margin: 0 auto;
+    }
+
+    &__text {
+        grid-column: auto / span 24;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        @include tablet-min {
+          grid-column: auto / span 12;
+        }
+
+        p {
+            margin-bottom: 60px;
+        }
+        
+    }
+
+    &__image {
+        grid-column: auto / span 24;
+        position: relative;
+
+        @include tablet-min {
+          grid-column: auto / span 12;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 50%;
+            height: 50%;
+            background: url('/img/house.svg') center center/contain no-repeat;
+        }
+        
+    }
+
+    &__image-item {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
     }
 }

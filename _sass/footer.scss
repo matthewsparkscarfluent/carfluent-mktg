@@ -1,10 +1,6 @@
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    background: $color-6;
+.footer {
+    padding: 20px 0 0;
+    background: $color-1;
     font-family: $plex;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -12,5 +8,94 @@ footer {
 
     p {
         font-size: 13px;
+    }
+
+    &__container {
+        width: 100%;
+        max-width: 1400px;
+        @include grid;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    &__image {
+        grid-column: auto / span 24;
+        min-height: 200px;
+        order: 2;
+
+        @include tablet-min {
+          grid-column: auto / span 12;
+          min-height: 400px;
+          order: 1;
+        }
+        
+    }
+
+    &__text {
+        grid-column: auto / span 24;
+        padding: 40px;
+        order: 1;
+
+        @include tablet-min {
+          grid-column: auto / span 12;
+          order: 2;
+        }
+        
+    }
+
+    &__logo {
+        max-width: 300px;
+        padding-bottom: 60px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        p {
+            color: $color-2;
+        }
+
+        a {
+            color: $color-4;
+            padding-left: 5px;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 60px;
+
+        @include tablet-min {
+            justify-content: flex-start;
+        }
+        
+    }
+
+    &__social-link {
+        padding: 10px;
+    }
+
+    &__social-link svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    &__copyright {
+        background: lighten($color-1, 10%);
+        padding: 20px;
+
+        p {
+            text-align: center;
+            color: $color-2;
+        }
     }
 }

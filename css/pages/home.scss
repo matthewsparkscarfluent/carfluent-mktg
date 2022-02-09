@@ -353,12 +353,17 @@
 /* Admin */
 
 .admin {
-    padding: 80px 20px;
+    padding: 80px 20px 0;
     background: #ECF3FA;
     position: relative;
-    height: 100vh;
     overflow: hidden;
     min-height: 800px;
+
+    @include tablet-min {
+        height: 100vh;
+        padding: 80px 20px;
+    }
+    
 
     &::after {
         content: '';
@@ -409,11 +414,19 @@
 
     &__image {
         width: 70vh;
-        height: 70vh;
-        position: absolute;
-        bottom: -20vh;
-        right: -20vh;
+        height: 500px;
+        position: relative;
+        bottom: 0;
+        right: 0;
         z-index: 1;
+
+        @include tablet-min {
+            height: 70vh;
+            position: absolute;
+            bottom: -20vh;
+            right: -20vh;
+        }
+        
 
         @include desktop-min {
             width: 90vh;

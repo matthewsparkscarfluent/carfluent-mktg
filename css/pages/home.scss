@@ -35,7 +35,7 @@
         padding: 80px 40px;
 
         @include tablet-wide-min {
-            grid-column: auto / span 14;
+            grid-column: auto / span 12;
             order: 1;
             padding: 150px 80px;
         }
@@ -56,7 +56,7 @@
         align-items: center;
 
         @include tablet-wide-min {
-            grid-column: auto / span 10;
+            grid-column: auto / span 12;
             min-height: 0;
             order: 2;
         }
@@ -66,21 +66,21 @@
             max-width: 100%;
 
             @include phone-wide-min {
-                max-width: 90%;
+                max-width: 500px;
             }
 
             @include tablet-wide-min {
                 position: absolute;
                 top: auto;
                 bottom: -2px;
-                left: -50%;
+                left: auto;
                 width: 100%;
                 height: auto;
                 min-width: 500px;
             }
 
             @include desktop-min {
-                left: -25%;
+                left: -10%;
                 min-width: 600px;
             }
         }
@@ -269,7 +269,7 @@
 
         @include tablet-min {
             padding: 100px 0 180px; 
-            grid-gap: clamp(10px, 1rem, 40px);
+            grid-gap: clamp(10px, 2rem, 40px);
         }
     }
 
@@ -358,6 +358,7 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+    min-height: 800px;
 
     &::after {
         content: '';
@@ -424,14 +425,14 @@
             content: 'Admin tool coming soon';
             position: absolute;
             top: 50%;
-            left: -300px;
-            padding: 20px 60px;
+            left: -255px;
+            padding: 20px 40px;
             background: $color-7;
             border-radius: 20px;
             border: solid 1px $color-6;
             font-family: $space;
             font-style: italic;
-            font-size: 1rem;
+            font-size: .9rem;
             // box-shadow: var(--shadow-elevation-medium);
             display: none;
 
@@ -498,6 +499,7 @@
 
         &-image {
             padding: 0 20px;
+            max-height: 600px;
             
             img {
                 width: 100%;
@@ -505,7 +507,6 @@
                 display: block;
                 margin: 0 auto;
                 height: 100%;
-                max-height: 600px;
             }
         }
     }
@@ -562,6 +563,20 @@
             @include desktop-min {
                 max-width: 500px;
             }
+        }
+
+        .btn {
+            background: transparent;
+            border: solid 2px $color-2;
+
+            @include desktop-sm-min {
+              
+                &:hover {
+                    background: $color-2;
+                    color: $color-1;
+                }
+            }
+            
         }
     }
 }

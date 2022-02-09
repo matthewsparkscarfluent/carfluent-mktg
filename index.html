@@ -6,60 +6,160 @@ page_class:
 image: "/img/carfluent-meta.jpg"
 hero:
 - 
-    tagline: "Coming Soon"
-    headline: "beautifully bilingual vehicle listings, built with AI"
-    img-src: "img/hero-img-anim.svg"
+    tagline: "Now In Beta"
+    headline: "Beautifully bilingual auto listings for your dealership"
+    text: "Open your car lot to a lot more people with Carfluent."
+    img-src: "img/woman-car-anim.svg"
     img-alt: "Carfluent is AI that helps auto dealers translate their web presence."
+
+integrations:
+-
+    tagline: "Seamless integration"
+    makes:
+    - 
+        img_src: "/img/makes/ford.svg"
+        img_alt: "Ford"
+    - 
+        img_src: "/img/makes/mitsubishi.svg"
+        img_alt: "Mitsubishi"
+    - 
+        img_src: "/img/makes/toyota.svg"
+        img_alt: "Toyota"
+    - 
+        img_src: "/img/makes/kia.svg"
+        img_alt: "Kia"
+    - 
+        img_src: "/img/makes/mazda.svg"
+        img_alt: "Mazda"
+    - 
+        img_src: "/img/makes/chevy.svg"
+        img_alt: "Chevrolet"
+    - 
+        img_src: "/img/makes/jeep.svg"
+        img_alt: "Jeep"
+    - 
+        img_src: "/img/makes/honda.svg"
+        img_alt: "Honda"
+    - 
+        img_src: "/img/makes/dodge.svg"
+        img_alt: "Dodge"
+
+features_headline: "Finally, a better bilingual experience for you and your customers."
 
 features:
 -
-    class: "features__item--left"
-    img-src: "img/drone-walk-anim.svg"
+    class: "features__item--1"
+    img-src: "img/features/1.svg"
     img-alt: "Carfluent's AI makes translation a snap!"
-    headline: "get by with a little help from your machines"
-    text: "We use artifical intellegence for fluid translations. That translates to less work, and a broader audience. Then of course, that translates to more sales."
+    subheadline: "Translate Toggle"
+    headline: "Stop tusslin’ & start togglin’"
+    text: "Let your customers toggle between languages on any device, at any time."
 
 -
-    class: "features__item--right"
-    img-src: "img/woman-car-anim.svg"
+    class: "features__item--2"
+    img-src: "img/features/2.svg"
     img-alt: "Attract more customers with listings in their native language."
-    headline: "big power with a little native lengua"
-    text: "Attract more customers, using the language that they’re acustom to, and rely on some beautifuly crafted UX to do the rest."
+    subheadline: "The Future of Retailing"
+    headline: "New dog, old tricks"
+    text: "Carfluent was built with traditional digital retailing methods, but on an entirely new platform."
+
+-
+    class: "features__item--3"
+    img-src: "img/features/3.svg"
+    img-alt: "Attract more customers with listings in their native language."
+    subheadline: "Form Tangos With Function"
+    headline: "Designed with your customers in mind"
+    text: "Publish listings that focus on what matters most to your customers — your vehicles."
 
 highlight:
 -
     img-src: "img/car-list-anim.svg"
     img-alt: "Carfluent offers multilingual listings"
-    tagline: "Instantly Bilingual"
-    headline: "publish spanish inventory listings in less time than it took to read this sentence"
+    headline: "Try us for free!"
+    text: "Join our pilot program and get a couple months on us"
 
 ---
 {% for hero in page.hero %}
 <div class="hero">
-    <div class="hero__headline">
-        <h3>{{ hero.tagline }}</h3>
-        <h1>{{ hero.headline }}</h1>
-        <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Join waitlist </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+    <div class="hero__container">
+        <div class="hero__headline">
+            <h3 class="tag"><span>{{ hero.tagline }}</span></h3>
+            <h1 class="homepage__headline">{{ hero.headline }}</h1>
+            <p>{{ hero.text  }}</p>
+            <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Try Us For Free</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+        </div>
+        <div class="hero__right">
+            <img src="{{ hero.img-src }}" alt="{{ hero.img-alt }}">
+        </div>
     </div>
-    <div class="hero__right">
-        <img src="{{ hero.img-src }}" alt="{{ hero.img-alt }}">
+    <!--Waves Container-->
+    <div class="waves__container">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+        </svg>
+        </div>
+        <!--Waves end-->
     </div>
-</div>
 {% endfor %}
 
 <!-- {% include modal-form.html %} -->
 
+{% for integration in page.integrations %}
+<div class="makes">
+    <h3 class="tag"><span>{{ integration.tagline }}</span></h3> 
+    <div class="makes__container">
+        {% for make in integration.makes %}
+        <div class="make">
+            <img src="{{ make.img_src }}" alt="{{ make.img_alt }}">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+<div class="parallax" style="background: url('/img/mockup.jpg');"></div>
+
 <div class="features">
     <div class="features__wrapper">
+        <h2 class="features__section-headline homepage__headline">{{ page.features_headline }}</h2>
         {% for feature in page.features %}
         <div class="features__item  {{ feature.class }}">
+            <div class="features__subheadline">
+                <h3>{{ feature.subheadline }}</h3>
+            </div>
             <div class="features__item-wrapper">
-                <img src="{{ feature.img-src }}" alt="{{ feature.img-alt }}">
                 <h2><span>{{ feature.headline }}</span></h2>
                 <p>{{ feature.text }}</p>
             </div>
+            <div class="features__image">
+                <img src="{{ feature.img-src }}" alt="{{ feature.img-alt }}">
+            </div>
         </div>
         {% endfor %}
+    </div>
+</div>
+
+<div class="admin">
+    <div class="admin__container">
+        <div class="admin__text">
+            <h3 class="tag"><span>Plugin Functionality</span></h3>
+            <h2 class="homepage__headline">Operate with out of this world ease.</h2>
+            <p>Once you plug your inventory feed into the Carfluent platform, our trained AI takes it from there. It generates fully-functioning, bilingual listings for each vehicle that can be published within seconds.</p>
+            <img src="/img/formula.svg" alt="Your Site Amplified!">
+            <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Try Us For Free</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+        </div>
+    </div>
+    <div class="admin__image">
+        <div class="admin__image-item"></div>
     </div>
 </div>
 
@@ -72,10 +172,24 @@ highlight:
     </div>
     <div class="highlight__right">
         <div class="highlight__right-wrapper">
-            <h3>{{ highlight.tagline }}</h3>
             <h2>{{ highlight.headline }}</h2>
-            <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Join waitlist </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+            <p>{{ highlight.text }}</p>
+            <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Let's Do It</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
         </div>
     </div>
 </div>
 {% endfor %}
+
+<div class="training">
+    <div class="training__container">
+        <div class="training__text">
+            <h3 class="tag"><span>Human Trained AI</span></h3>
+            <h2 class="homepage__headline">Get by with a little help from your machines</h2>
+            <p>Without adding any additional steps to your in-store processes, Carfluent provides your dealership with new, customer-facing inventory search and vehicle details pages. These pages feature baked-in translations generated by our wicked-smart AI. </p>
+            <a class="typeform-share button btn" href="https://form.typeform.com/to/ZzfQRG8P?typeform-medium=embed-snippet" data-mode="drawer_right" target="_blank">Try It For Free</a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+        </div>
+        <div class="training__image">
+            <div class="training__image-item" style="background: url('/img/drone-walk-anim.svg') center center/contain no-repeat;"></div>
+        </div>
+    </div>
+</div>

@@ -10,9 +10,7 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $space;
-    letter-spacing: 1px;
-    text-transform: lowercase;
+    font-family: $cerebri-bold;
 }
 
 h3 {
@@ -24,24 +22,23 @@ h3 {
 }
 
 h1 {
-    color: $color-2;
-    font-family: $space;
-    letter-spacing: 1px;
-    font-size: 1.75rem;
+    color: $color-1;
+    font-family: $cerebri-bold;
+    font-size: clamp(1rem, 2.75vw, 2.75rem);
     width: 100%;
     margin-bottom: 40px;
 }
 
 p {
     color: $color-1;
-    font-family: $plex, sans-serif;
+    font-family: $cerebri, sans-serif;
 }
 
 .btn {
     background: $color-4;
-    padding: 10px 30px;
-    border-radius: 30px;
-    font-family: $lexend;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-family: $cerebri-bold;
     text-align: center;
     color: $color-2;
     font-size: .8rem;
@@ -51,5 +48,24 @@ p {
 
     &:hover {
         background: darken($color-4, 10%);
+    }
+}
+
+.tag {
+    position: relative;
+    display: inline-block;
+    color: $color-1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: auto -10px -5px -10px;
+        height: 10px;
+        background: $color-3;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
     }
 }

@@ -1,7 +1,7 @@
 # Site settings
 title: Carfluent
 email: matt@carfluent.io
-description: Beautifully bilingual vehicle listings, built with AI.
+description: A beautifully bilingual web experience for your automotive dealership, built with AI.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
